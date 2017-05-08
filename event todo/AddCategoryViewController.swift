@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddCategoryViewController.swift
 //  event todo
 //
 //  Created by ibrahim ibrahim on 5/7/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
