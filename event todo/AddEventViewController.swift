@@ -17,13 +17,12 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var startDateField: UIDatePicker!
     @IBOutlet weak var endDateField: UIDatePicker!
     @IBOutlet weak var isImportant: UISwitch!
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+ 
     }
     
     @IBAction func createEvent(_ sender: Any) {

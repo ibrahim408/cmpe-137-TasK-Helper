@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -179,19 +178,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="categories" id="MKt-3o-KJV">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="F7Z-ba-1Oz">
-                                <connections>
-                                    <segue destination="TWS-Wg-u1P" kind="show" id="Y3g-ty-VZg"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Ev" id="yYn-Z7-Loj">
-                                <connections>
-                                    <segue destination="hBJ-Cc-72k" kind="show" id="84q-aH-Qtz"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F7Z-ba-1Oz">
+                            <connections>
+                                <segue destination="TWS-Wg-u1P" kind="show" id="Y3g-ty-VZg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Nu5-Al-7vV" id="rLf-gh-wen"/>
+                        <segue destination="hBJ-Cc-72k" kind="show" identifier="EventViewsSeque" id="NLK-Gg-eeT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cng-eo-KNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,10 +216,16 @@
                                 <rect key="frame" x="171" y="274" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="createCategory:" destination="TWS-Wg-u1P" eventType="touchUpInside" id="d0m-ar-rv0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="0.4473191352739726" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="titleField" destination="a0w-OW-n1Y" id="l2F-qL-hBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHB-8I-YWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

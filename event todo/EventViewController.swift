@@ -71,7 +71,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         if editingStyle == .delete{
             let event = eventsCoreDate[indexPath.row]
             
-            delteEventFromKit(eventIdentifier: event.eventID!)
+            if event.eventID != nil{
+                delteEventFromKit(eventIdentifier: event.eventID!)
+
+            }
+            
             context.delete(event)
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()

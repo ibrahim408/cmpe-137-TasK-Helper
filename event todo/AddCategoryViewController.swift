@@ -10,23 +10,35 @@ import UIKit
 
 class AddCategoryViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var titleField: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func createCategory(_ sender: Any) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let category = Category(context: context)
+    
+        
+        // first check if text boxes are filled or not
+        // if let check for all of them    
+        category.title = titleField.text!
+      
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+        
     }
-    */
+
 
 }

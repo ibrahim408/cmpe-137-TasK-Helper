@@ -64,14 +64,12 @@
 		77C4688D1EB81ABC000E7F89 /* event todo */ = {
 			isa = PBXGroup;
 			children = (
-				77C4688E1EB81ABC000E7F89 /* AppDelegate.swift */,
+				77C468921EB81ABC000E7F89 /* Main.storyboard */,
+				776FB2EB1EBFB378005C15A9 /* ViewController.swift */,
 				77C468A41EB81C94000E7F89 /* AddEventViewController.swift */,
 				776FB2E91EBFB306005C15A9 /* AddCategoryViewController.swift */,
 				77C468901EB81ABC000E7F89 /* EventViewController.swift */,
-				77C468921EB81ABC000E7F89 /* Main.storyboard */,
-				776FB2EB1EBFB378005C15A9 /* ViewController.swift */,
 				776FB2E71EBFB11B005C15A9 /* CategoryViewController.swift */,
-				77C468951EB81ABC000E7F89 /* event_todo.xcdatamodeld */,
 				77C468A31EB81B08000E7F89 /* file */,
 			);
 			path = "event todo";
@@ -80,6 +78,8 @@
 		77C468A31EB81B08000E7F89 /* file */ = {
 			isa = PBXGroup;
 			children = (
+				77C468951EB81ABC000E7F89 /* event_todo.xcdatamodeld */,
+				77C4688E1EB81ABC000E7F89 /* AppDelegate.swift */,
 				77C4689D1EB81ABC000E7F89 /* Info.plist */,
 				77C468981EB81ABC000E7F89 /* Assets.xcassets */,
 				77C4689A1EB81ABC000E7F89 /* LaunchScreen.storyboard */,
