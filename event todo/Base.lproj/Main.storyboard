@@ -77,7 +77,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiL-Bz-sem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="-358"/>
+            <point key="canvasLocation" x="353" y="1446"/>
+        </scene>
+        <!--event detail-->
+        <scene sceneID="sTQ-jX-xpQ">
+            <objects>
+                <viewController id="EIA-E2-4WZ" customClass="EventDetailViewController" customModule="event_todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VWb-Or-iZP"/>
+                        <viewControllerLayoutGuide type="bottom" id="aU0-Wj-QwV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jq7-X8-6mI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10z-hS-WPk">
+                                <rect key="frame" x="39" y="513" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="yooooo"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y99-Cv-hkd">
+                                <rect key="frame" x="39" y="379" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omm-3q-PsP">
+                                <rect key="frame" x="39" y="323" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY5-ob-Ntp">
+                                <rect key="frame" x="16" y="145" width="223" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="event detail" id="6Hd-LG-wYz">
+                        <barButtonItem key="rightBarButtonItem" title="finished" id="OkV-z9-lwG">
+                            <connections>
+                                <action selector="compeltedEvent:" destination="EIA-E2-4WZ" id="RO3-Jt-YQm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="SY5-ob-Ntp" id="eLS-KV-fpa"/>
+                        <outlet property="testField" destination="Y99-Cv-hkd" id="O0j-GA-d3J"/>
+                        <outlet property="testField2" destination="Omm-3q-PsP" id="fQf-aH-ODG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BY-l7-GoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4207.1999999999998" y="-438.53073463268368"/>
         </scene>
         <!--Event View Controller Scene-->
         <scene sceneID="T8m-95-b7R">
@@ -105,21 +163,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="la3-c6-PFS">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="DHx-bA-eZg">
-                                <connections>
-                                    <segue destination="7f3-E0-gNR" kind="show" id="jIY-sL-UzH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="done" id="LYr-fi-e8R">
-                                <connections>
-                                    <segue destination="SAD-Vm-9ha" kind="show" id="Qq1-Nj-ffG"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DHx-bA-eZg">
+                            <connections>
+                                <segue destination="7f3-E0-gNR" kind="show" id="jIY-sL-UzH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IPe-w1-A2k" id="vu5-8B-uer"/>
+                        <segue destination="EIA-E2-4WZ" kind="show" identifier="eventDetailSegue" id="L7v-K4-sdk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhj-SN-7FK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,11 +273,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="categories" id="MKt-3o-KJV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F7Z-ba-1Oz">
-                            <connections>
-                                <segue destination="TWS-Wg-u1P" kind="show" id="Y3g-ty-VZg"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="F7Z-ba-1Oz">
+                                <connections>
+                                    <segue destination="TWS-Wg-u1P" kind="show" id="Y3g-ty-VZg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="completed" id="iXP-EK-Dd4">
+                                <connections>
+                                    <segue destination="SAD-Vm-9ha" kind="show" id="lXx-aH-hAG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nu5-Al-7vV" id="rLf-gh-wen"/>

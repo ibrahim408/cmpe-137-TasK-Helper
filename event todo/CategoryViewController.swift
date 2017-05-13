@@ -82,7 +82,7 @@ class CategoryViewController:  UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "EventViewsSeque", sender: categorysCoreDate[indexPath.row])
+        performSegue(withIdentifier: "EventViewsSeque", sender: categorysCoreDate[indexPath.row].title)
     }
     
     /*

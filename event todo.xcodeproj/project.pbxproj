@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775962831EC7957F00E11665 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775962821EC7957F00E11665 /* EventDetailViewController.swift */; };
 		776FB2E81EBFB11B005C15A9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FB2E71EBFB11B005C15A9 /* CategoryViewController.swift */; };
 		776FB2EA1EBFB306005C15A9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FB2E91EBFB306005C15A9 /* AddCategoryViewController.swift */; };
 		776FB2EC1EBFB378005C15A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FB2EB1EBFB378005C15A9 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775962821EC7957F00E11665 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		776FB2E71EBFB11B005C15A9 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		776FB2E91EBFB306005C15A9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		776FB2EB1EBFB378005C15A9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				776FB2E91EBFB306005C15A9 /* AddCategoryViewController.swift */,
 				77C468901EB81ABC000E7F89 /* EventViewController.swift */,
 				776FB2E71EBFB11B005C15A9 /* CategoryViewController.swift */,
+				775962821EC7957F00E11665 /* EventDetailViewController.swift */,
 				77C468A31EB81B08000E7F89 /* file */,
 			);
 			path = "event todo";
@@ -166,6 +169,7 @@
 				776FB2E81EBFB11B005C15A9 /* CategoryViewController.swift in Sources */,
 				77C468971EB81ABC000E7F89 /* event_todo.xcdatamodeld in Sources */,
 				776FB2EA1EBFB306005C15A9 /* AddCategoryViewController.swift in Sources */,
+				775962831EC7957F00E11665 /* EventDetailViewController.swift in Sources */,
 				77C468A51EB81C94000E7F89 /* AddEventViewController.swift in Sources */,
 				776FB2EC1EBFB378005C15A9 /* ViewController.swift in Sources */,
 				77C468911EB81ABC000E7F89 /* EventViewController.swift in Sources */,

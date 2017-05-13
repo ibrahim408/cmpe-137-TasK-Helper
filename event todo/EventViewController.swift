@@ -17,6 +17,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var eventsCoreDate : [Event] = []
+    var selectedEvent: Event?
     // string of Category name
     // display Category with name "sports"
     
@@ -32,7 +33,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         getEventData()
         tableView.reloadData()
         
-        resetAccessoryType()
+        //resetAccessoryType()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,8 +136,15 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
+        //performSegue(withIdentifier: "eventDetailSegue", sender: eventsCoreDate[indexPath.row].title!)
+        selectedEvent = eventsCoreDate[indexPath.row]
+        performSegue(withIdentifier: "eventDetailSegue", sender: eventsCoreDate[indexPath.row])
+
+
+     /*
+        tableView.deselectRow(at: indexPath, animated: true)
+         
         let event = eventsCoreDate[indexPath.row]
         
         if let cell = tableView.cellForRow(at: indexPath) {
@@ -150,7 +158,23 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
                 event.completed = false;
             }
         }
+ */
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventDetailSegue"{
+            let temp = segue.destination as! EventDetailViewController
+            temp.event = selectedEvent!
+
+            
+            //temp.titleIs = sender as! String
+            //temp?.eventsCoreDate = sender as! NSManagedObject?
+            //temp.event = sender as! Event
+        }
+
+    }
+
     
 }
 
