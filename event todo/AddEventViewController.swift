@@ -37,6 +37,7 @@ class AddEventViewController: UIViewController {
         event.sDate = startDateField.date as NSDate
         event.eDate = endDateField.date as NSDate
         event.isimportant = isImportant.isOn
+        event.completed = false
         
         
 

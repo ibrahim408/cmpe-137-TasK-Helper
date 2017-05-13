@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  CompletedEventsViewController.swift
 //  event todo
 //
-//  Created by ibrahim ibrahim on 5/1/17.
+//  Created by ibrahim ibrahim on 5/10/17.
 //  Copyright © 2017 IBMibrahim. All rights reserved.
 //
 
@@ -11,14 +11,41 @@ import EventKit
 import CoreData
 
 
-class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class CompletedEventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var eventsCoreDate : [Event] = []
-    // string of Category name
-    // display Category with name "sports"
+    // display Category with events "sports"
+    // display completed events
+    
+    
+    func test(){
+        /*
+        var array : [String]
+        array = ["one","two","one"]
+        
+        let itemToRemove = "one"
+        
+        while array.contains(itemToRemove) {
+            if let itemToRemoveIndex = array.index(of: itemToRemove) {
+                array.remove(at: itemToRemoveIndex)
+            }
+        }
+        
+        for events in eventsCoreDate{
+            if  events.completed == true{
+                eventsCoreDate[ind]
+            }
+        }
+ */
+        
+
+        
+    }
     
     
     override func viewDidLoad() {
@@ -30,9 +57,16 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         getEventData()
-        tableView.reloadData()
         
-        resetAccessoryType()
+   
+        /*
+        competedEventsData = eventsCoreDate.filter({ (event) -> Bool in
+            return event.completed
+        })
+ */
+        
+        tableView.reloadData()
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,14 +74,19 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let event = eventsCoreDate[indexPath.row]
         
-        if event.completed == false{
-            if event.isimportant{
-                
-                cell.textLabel?.text = "💢\(event.title!)"
-            }else {
-                cell.textLabel?.text = "\(event.title!)"
-                
+        
+
+        
+        if event.completed != false{
+            if event.completed == true{
+                if event.isimportant{
+                    cell.textLabel?.text = "💢\(event.title!)"
+                }else {
+                    cell.textLabel?.text = "\(event.title!)"
+                }
             }
+            
+            
         }
         
         
@@ -60,16 +99,30 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func getEventData(){
+
+        /*
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         do{
+         
+            eventsCoreDate = try context.fetch(Event.fetchRequest())
+        }catch{
+            print("did not work")
+        }
+ */
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+            //let request: NSFetchRequest<NSFetchRequestResult> = Event.fetchRequest()
             let request: NSFetchRequest<Event> = Event.fetchRequest()
-            request.predicate = NSPredicate(format: "completed == %@", NSNumber(value: false))
+            request.predicate = NSPredicate(format: "completed == %@", NSNumber(value: true))
             eventsCoreDate = try context.fetch(request)
         }catch{
             print("did not work")
         }
+     
     }
+    
+    
+
     
     
     
@@ -124,33 +177,5 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
     }
-    
-    func resetAccessoryType() {
-        for row in 0..<eventsCoreDate.count {
-            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)){
-                cell.accessoryType = .none
-            }
-        }
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        let event = eventsCoreDate[indexPath.row]
-        
-        if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .none {
-                cell.accessoryType = .checkmark
-                
-                event.completed = true;
-                
-            } else {
-                cell.accessoryType = .none
-                event.completed = false;
-            }
-        }
-    }
-    
-}
 
+}

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,6 +45,40 @@
             </objects>
             <point key="canvasLocation" x="1977.5" y="292.5"/>
         </scene>
+        <!--completed-->
+        <scene sceneID="J4V-JC-zES">
+            <objects>
+                <viewController id="SAD-Vm-9ha" customClass="CompletedEventsViewController" customModule="event_todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IiW-fD-j8w"/>
+                        <viewControllerLayoutGuide type="bottom" id="032-6R-D0q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Bf-lp-BYC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7E0-TJ-n6u">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7E0-TJ-n6u" firstAttribute="leading" secondItem="1Bf-lp-BYC" secondAttribute="leadingMargin" id="5su-mA-3d0"/>
+                            <constraint firstItem="032-6R-D0q" firstAttribute="top" secondItem="7E0-TJ-n6u" secondAttribute="bottom" id="7s4-DM-ZJF"/>
+                            <constraint firstItem="7E0-TJ-n6u" firstAttribute="top" secondItem="IiW-fD-j8w" secondAttribute="bottom" id="e5O-hi-1kK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7E0-TJ-n6u" secondAttribute="trailing" id="gJj-Ch-ADt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="completed" id="kui-wf-hre"/>
+                    <connections>
+                        <outlet property="tableView" destination="7E0-TJ-n6u" id="Ww7-IE-pU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiL-Bz-sem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="-358"/>
+        </scene>
         <!--Event View Controller Scene-->
         <scene sceneID="T8m-95-b7R">
             <objects>
@@ -69,11 +105,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="la3-c6-PFS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DHx-bA-eZg">
-                            <connections>
-                                <segue destination="7f3-E0-gNR" kind="show" id="jIY-sL-UzH"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="DHx-bA-eZg">
+                                <connections>
+                                    <segue destination="7f3-E0-gNR" kind="show" id="jIY-sL-UzH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="done" id="LYr-fi-e8R">
+                                <connections>
+                                    <segue destination="SAD-Vm-9ha" kind="show" id="Qq1-Nj-ffG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IPe-w1-A2k" id="vu5-8B-uer"/>
