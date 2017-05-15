@@ -4,6 +4,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="eDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventID" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,6 +14,6 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="18" width="128" height="60"/>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -85,14 +85,19 @@ class CategoryViewController:  UIViewController, UITableViewDataSource, UITableV
         performSegue(withIdentifier: "EventViewsSeque", sender: categorysCoreDate[indexPath.row].title)
     }
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let test = segue.destination as! EventViewController
+        if segue.identifier == "EventViewsSeque"{
+            let temp = segue.destination as! EventViewController
+            
+            temp.category = sender as? String
+            
+        }
+    
         
-        test.navigationItem.title = sender as? String
     }
- */
+ 
 
     
 }

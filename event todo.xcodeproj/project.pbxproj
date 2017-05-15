@@ -19,6 +19,8 @@
 		77C468991EB81ABC000E7F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C468981EB81ABC000E7F89 /* Assets.xcassets */; };
 		77C4689C1EB81ABC000E7F89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C4689A1EB81ABC000E7F89 /* LaunchScreen.storyboard */; };
 		77C468A51EB81C94000E7F89 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C468A41EB81C94000E7F89 /* AddEventViewController.swift */; };
+		77E5A1121ECA22C000F1D9F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5A1111ECA22C000F1D9F0 /* MapViewController.swift */; };
+		77E5A1141ECA231700F1D9F0 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5A1131ECA231700F1D9F0 /* Pin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		77C4689B1EB81ABC000E7F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77C4689D1EB81ABC000E7F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77C468A41EB81C94000E7F89 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		77E5A1111ECA22C000F1D9F0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		77E5A1131ECA231700F1D9F0 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				77C468901EB81ABC000E7F89 /* EventViewController.swift */,
 				776FB2E71EBFB11B005C15A9 /* CategoryViewController.swift */,
 				775962821EC7957F00E11665 /* EventDetailViewController.swift */,
+				77E5A1111ECA22C000F1D9F0 /* MapViewController.swift */,
+				77E5A1131ECA231700F1D9F0 /* Pin.swift */,
 				77C468A31EB81B08000E7F89 /* file */,
 			);
 			path = "event todo";
@@ -125,7 +131,7 @@
 				TargetAttributes = {
 					77C4688A1EB81ABC000E7F89 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = GE2289Q4C7;
+						DevelopmentTeam = 6WA6Y7KBQJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -167,8 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				776FB2E81EBFB11B005C15A9 /* CategoryViewController.swift in Sources */,
+				77E5A1141ECA231700F1D9F0 /* Pin.swift in Sources */,
 				77C468971EB81ABC000E7F89 /* event_todo.xcdatamodeld in Sources */,
 				776FB2EA1EBFB306005C15A9 /* AddCategoryViewController.swift in Sources */,
+				77E5A1121ECA22C000F1D9F0 /* MapViewController.swift in Sources */,
 				775962831EC7957F00E11665 /* EventDetailViewController.swift in Sources */,
 				77C468A51EB81C94000E7F89 /* AddEventViewController.swift in Sources */,
 				776FB2EC1EBFB378005C15A9 /* ViewController.swift in Sources */,
@@ -299,8 +307,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GE2289Q4C7;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = "event todo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ibrahim-ibrahim.event-todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,8 +321,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GE2289Q4C7;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = "event todo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ibrahim-ibrahim.event-todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

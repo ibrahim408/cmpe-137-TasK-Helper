@@ -16,6 +16,8 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
+    var category: String?
+
     var eventsCoreDate : [Event] = []
     var selectedEvent: Event?
     // string of Category name
@@ -33,6 +35,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         getEventData()
         tableView.reloadData()
         
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         //resetAccessoryType()
     }
     
@@ -64,9 +67,19 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do{
+            //let request: NSFetchRequest<Event> = Event.fetchRequest()
+            //request.predicate = NSPredicate(format: "completed == %@", NSNumber(value: false))
+            //eventsCoreDate = try context.fetch(request)
+            
             let request: NSFetchRequest<Event> = Event.fetchRequest()
-            request.predicate = NSPredicate(format: "completed == %@", NSNumber(value: false))
+            let p1 = NSPredicate(format: "completed == %@", NSNumber(value: false))
+            let p2 = NSPredicate(format: "categoryID == %@", category!)
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
+            request.predicate  = predicate
             eventsCoreDate = try context.fetch(request)
+
+            
+            
         }catch{
             print("did not work")
         }
@@ -165,12 +178,17 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventDetailSegue"{
             let temp = segue.destination as! EventDetailViewController
-            temp.event = selectedEvent!
-
             
-            //temp.titleIs = sender as! String
-            //temp?.eventsCoreDate = sender as! NSManagedObject?
-            //temp.event = sender as! Event
+  
+            temp.event = selectedEvent!
+        }
+        
+        
+        if segue.identifier == "createEvent"{
+            let temp = segue.destination as! AddEventViewController
+            
+            
+            temp.catagory = category!
         }
 
     }

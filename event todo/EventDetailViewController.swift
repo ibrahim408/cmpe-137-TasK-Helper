@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 extension NSDate {
     func toString() -> String {
@@ -28,7 +29,8 @@ class EventDetailViewController: UIViewController {
     var event: Event?
     var starttDate = NSDate()
     var endDate = NSDate()
-    
+    var slectedlocatiol : CLLocation?
+
 
 
 
@@ -42,7 +44,7 @@ class EventDetailViewController: UIViewController {
         
 
         nameField.text = event?.title
-        //eventTitleField.text = "it me"
+        //eventTitleField.text = "it me" //
        
         testField.text = starttDate.toString()
         testField2.text = endDate.toString()
@@ -52,23 +54,34 @@ class EventDetailViewController: UIViewController {
 
     @IBAction func compeltedEvent(_ sender: Any) {
         
-        navigationController!.popViewController(animated: true)
 
         if event?.completed == false{
             event?.completed=true
         }
+        
+        navigationController!.popViewController(animated: true)
+
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let eventStore = EKEventStore()
+        
+        
+        if segue.identifier == "showMap"{
+            let temp = segue.destination as! MapViewController
+            
+            let eventtemp = eventStore.event(withIdentifier: (event?.eventID)!)
+            slectedlocatiol = eventtemp?.structuredLocation?.geoLocation
+            
+            temp.location = eventtemp?.structuredLocation?.geoLocation
+        }
+    }
+    
 
     
 
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
